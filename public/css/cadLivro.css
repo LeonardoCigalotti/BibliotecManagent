@@ -1,0 +1,38 @@
+form.cadLivro{
+    display: block;
+    margin: auto;
+    width: 70%;
+    padding: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+label.texto{
+    font-size: 14pt;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+input.input, textarea.textarea{
+    width: 120%;
+    height: 35px;
+    padding-left: 15px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+textarea.textarea{
+    height: 100px;
+
+}
+button.formButton{
+    text-align: right;
+    margin: 20px 0px;
+    margin-left: 300px;
+    background-color: greenyellow;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
