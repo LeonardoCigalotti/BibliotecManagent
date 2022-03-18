@@ -13,17 +13,17 @@
     @csrf
     <div>
         <div>
-            <label for="title" class="texto">Título*</label>
+            <label for="title" class="texto">Título</label>
             <input type="text" class="input" name="title" id="title">
         </div>
 
         <div>
-            <label for="book" class="texto">Descrição do livro*</label>
+            <label for="book" class="texto">Descrição do livro</label>
             <textarea name="descricao" id="book" class="textarea"></textarea>
         </div>
 
         <div>
-            <label for="autor" class="texto">Autor(es)*</label>
+            <label for="autor" class="texto">Autor(es)</label>
             <input type="text" class="input" name="autor" id="autor">
         </div>
 

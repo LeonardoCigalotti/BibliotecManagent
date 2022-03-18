@@ -18,7 +18,7 @@
         <p>   {{ $mensagem }} </p>
     </div>
     @endif
-    
+
     <div class="listar">
         <table>
             <thead class="linha">
@@ -40,8 +40,11 @@
                     <td>##</td>
                     <td>##</td>
                     <td>
-                        <button class="editar">Editar</button>
-                        <form method="post" action="/admin/meuslivros/excluir/{{ $livro->id }}">
+                        <a href="/admin/meuslivros/{{ $livro->id }}/editar">
+                            <button class="editar">Editar</button>
+                        </a>
+                        <form method="post" action="/admin/meuslivros/excluir/{{ $livro->id }}"
+                        onsubmit="return confirm('Tem certeza que deseja remover este livro??')">
                             @csrf
                             @method('DELETE')
                             <button class="excluir">Excluir</button>

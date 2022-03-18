@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Livros;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Livro;
-use Illuminate\Support\Facades\DB;
 
 class LivrosController extends Controller
 {
@@ -64,6 +63,21 @@ class LivrosController extends Controller
         ->flash(
             'mensagem', "O livro foi excluído com sucesso!"
         );
+        return redirect()->route('livros_admin');
+    }
+
+    public function editar(int $id)
+    {
+        $livro = Livro::find($id);
+
+        return view('Livros.editar', ['livro' => $livro]);
+    }
+
+    public function update(Request $request)
+    {
+        Livro::find($request->id)
+        ->update($request->all());
+
         return redirect()->route('livros_admin');
     }
 }
