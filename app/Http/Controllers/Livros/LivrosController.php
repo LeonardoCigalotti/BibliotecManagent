@@ -17,6 +17,13 @@ class LivrosController extends Controller
         return view('livros.index', compact('livros', 'mensagem'));
     }
 
+    public function meusLivros(Request $request)
+    {
+        $livros = Livro::query()
+        ->orderBy('title')
+        ->get();
+        return view('livros.meuslivros', compact('livros'));
+    }
 
 
     public function create(){
