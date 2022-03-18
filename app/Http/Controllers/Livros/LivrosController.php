@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Livros;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Livro;
+use Illuminate\Support\Facades\DB;
 
 class LivrosController extends Controller
 {
@@ -22,7 +23,8 @@ class LivrosController extends Controller
         $livros = Livro::query()
         ->orderBy('title')
         ->get();
-        return view('livros.meuslivros', compact('livros'));
+        $mensagem = $request->session()->get('mensagem');
+        return view('livros.meuslivros', compact('livros', 'mensagem'));
     }
 
 
@@ -53,5 +55,15 @@ class LivrosController extends Controller
         }
 
         return redirect()->route('inicio_admin');
+    }
+
+    public function excluir(Request $request)
+    {
+        Livro::destroy($request->id);
+        $request->session()
+        ->flash(
+            'mensagem', "O livro foi excluído com sucesso!"
+        );
+        return redirect()->route('livros_admin');
     }
 }
