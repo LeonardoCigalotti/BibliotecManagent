@@ -18,8 +18,8 @@
         </div>
 
         <div class="form-group">
-            <label for="senha">Senha: </label>
-            <input type="password" name="senha" id="senha" required>
+            <label for="password">Senha: </label>
+            <input type="password" name="password" id="password" required>
         </div>
 
         <button type="submit" class="entrar">Entrar</button>
