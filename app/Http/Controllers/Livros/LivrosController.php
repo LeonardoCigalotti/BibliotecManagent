@@ -8,6 +8,10 @@ use App\Livro;
 
 class LivrosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function inicio(Request $request)
     {
         $livros = Livro::query()
