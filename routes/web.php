@@ -15,3 +15,4 @@ Route::get('/admin/index', 'Livros\LivrosController@inicio')->name('inicio_admin
 Route::get('/admin/meuslivros', 'Livros\LivrosController@meusLivros')->name('livros_admin');
 Route::get('/admin/criar', 'Livros\LivrosController@create')->name('criar_livros');
 Route::post('/admin/criar', 'Livros\LivrosController@enviar');
+Route::delete('/admin/meuslivros/excluir/{id}', 'Livros\LivrosController@excluir');
