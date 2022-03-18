@@ -16,8 +16,8 @@
         </div>
         <nav class="navbar">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Meus Livros</a></li>
+                <li><a href="/admin/index">Home</a></li>
+                <li><a href="/admin/meuslivros">Meus Livros</a></li>
                 <li><a href="#">Minhas Reservas</a></li>
                 <li><a href="#">Meu Perfil</a></li>
                 <li><a href="#">Logout</a></li>
