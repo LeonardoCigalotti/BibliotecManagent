@@ -11,4 +11,7 @@
 |
 */
 
-Route::get('/', 'Livros\LivrosController@create');
+Route::get('/admin/index', 'Livros\LivrosController@inicio')->name('inicio_admin');
+
+Route::get('/admin/criar', 'Livros\LivrosController@create')->name('criar_livros');
+Route::post('/admin/criar', 'Livros\LivrosController@enviar');
