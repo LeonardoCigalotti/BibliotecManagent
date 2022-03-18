@@ -13,6 +13,12 @@
         <button class="novo">Cadastrar livro novo</button>
     </a>
 
+    @if(!empty($mensagem))
+    <div class="mensagem">
+        <p>   {{ $mensagem }} </p>
+    </div>
+    @endif
+    
     <div class="listar">
         <table>
             <thead class="linha">
@@ -34,8 +40,12 @@
                     <td>##</td>
                     <td>##</td>
                     <td>
-                        <button class="Editar">Editar</button>
-                        <button class="Editar">Excluir</button>
+                        <button class="editar">Editar</button>
+                        <form method="post" action="/admin/meuslivros/excluir/{{ $livro->id }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="excluir">Excluir</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
