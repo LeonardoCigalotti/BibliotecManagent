@@ -18,3 +18,7 @@ Route::post('/admin/criar', 'Livros\LivrosController@enviar');
 Route::delete('/admin/meuslivros/excluir/{id}', 'Livros\LivrosController@excluir');
 Route::get('/admin/meuslivros/{id}/editar', 'Livros\LivrosController@editar');
 Route::put('/admin/meuslivros/update/{id}', 'Livros\LivrosController@update');
+
+Auth::routes();
+
+Route::get('/entrar', 'Usuario\UsuarioController@inicio');
