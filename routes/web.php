@@ -19,6 +19,9 @@ Route::delete('/admin/meuslivros/excluir/{id}', 'Livros\LivrosController@excluir
 Route::get('/admin/meuslivros/{id}/editar', 'Livros\LivrosController@editar');
 Route::put('/admin/meuslivros/update/{id}', 'Livros\LivrosController@update');
 
+Route::get('/admin/minhasreservas', 'Reservas\ReservasController@inicio');
+Route::get('/admin/reservar/{id}', 'Reservas\ReservasController@reservar');
+
 Auth::routes();
 
 Route::get('/', 'Usuario\UsuarioController@inicio');

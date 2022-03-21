@@ -35,7 +35,17 @@
                     <td>{{ $livro->autor}}</td>
                     <td>{{$usuarios}}</td>
                     <td>##</td>
-                    <td><button class="reservar">Reservar</button></td>
+                    <td><button class="reservar" onclick="myFunction()"><span nome="livroId" id="{{ $livro->id }}">Reservar</span></button></td>
+                        <script>
+                            function myFunction() {
+                                let text = "Você deseja reservar este livro?";
+                                if (confirm(text) == true) {
+                                    window.location.href = "http://localhost:8000/admin/reservar/{{ $livro->id }}";
+                                } else {
+                                    windows.close;
+                                }
+                            }
+                        </script>
                 </tr>
                 @endforeach
             </tbody>
