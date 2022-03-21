@@ -1,11 +1,11 @@
-@extends('navbar')
+@extends('layoutInicioAdmin')
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{url('css/inicio.css')}}">
 @endsection
 
 @section('header')
-    Início
+    Minhas Reservas
 @endsection
 
 @section('body')
@@ -17,7 +17,6 @@
                     <th>Livro</th>
                     <th>Descrição</th>
                     <th>Autor(es)</th>
-                    <th>Registrado por</th>
                     <th>Reservado</th>
                     <th>Ações</th>
                 </tr>
@@ -29,8 +28,14 @@
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
                     <td>##</td>
-                    <td>##</td>
-                    <td><button class="reservar">Reservar</button></td>
+                    <td>
+                        <form method="post" action="/admin/meuslivros/excluir/{{ $livro->id }}"
+                        onsubmit="return confirm('Tem certeza que deseja remover este livro??')">
+                            @csrf
+                            @method('DELETE')
+                            <button class="excluir">Cancelar</button>
+                        </form>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
@@ -38,4 +43,5 @@
     </div>
 
 @endsection
+
 

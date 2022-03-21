@@ -4,18 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Livro extends Model
+class Reserva extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['title', 'descricao', 'autor', 'user_id', 'reserva_id'];
+    protected $fillable = ['id', 'reserva', 'livro_id', 'user_id'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function reserva()
+    public function livro()
     {
-        return $this->belongsTo(Reserva::class);
+        return $this->belongsTo(Livro::class);
     }
 }
