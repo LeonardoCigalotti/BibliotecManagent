@@ -22,8 +22,6 @@ Route::put('/admin/meuslivros/update/{id}', 'Livros\LivrosController@update');
 Auth::routes();
 
 Route::get('/', 'Usuario\UsuarioController@inicio');
-
-
 Route::get('/entrar', 'Usuario\UsuarioController@login');
 Route::post('/entrar', 'Usuario\UsuarioController@entrar');
 Route::get('/registrar', 'Usuario\UsuarioController@registrar');

@@ -11,6 +11,14 @@ use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
+    public function inicio(Request $request)
+    {
+        $livros = Livro::query()
+        ->orderBy('title')
+        ->get();
+        return view('Usuarios.inicio', compact('livros'));
+    }
+    
     public function login()
     {
         return view('Usuarios.login');
@@ -23,14 +31,6 @@ class UsuarioController extends Controller
             return redirect()->back()->withErrors('Usuario ou senha incorreta');
         }
         return redirect()->route('#');
-    }
-
-    public function inicio(Request $request)
-    {
-        $livros = Livro::query()
-        ->orderBy('title')
-        ->get();
-        return view('index', compact('livros'));
     }
 
     public function registrar()
