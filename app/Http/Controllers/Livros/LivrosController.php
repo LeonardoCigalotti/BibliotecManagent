@@ -18,7 +18,7 @@ class LivrosController extends Controller
         ->orderBy('title')
         ->get();
         $mensagem = $request->session()->get('mensagem');
-        return view('livros.index', compact('livros', 'mensagem'));
+        return view('Livros.indexAdmin', compact('livros', 'mensagem'));
     }
 
     public function meusLivros(Request $request)

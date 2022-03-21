@@ -14,10 +14,13 @@ class CriarTabelaLivros extends Migration
     public function up()
     {
         Schema::create('livros', function(Blueprint $table){
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('title');
             $table->string('descricao');
             $table->string('autor');
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id', 20)->references('id')->on('users');
         });
     }
 
@@ -28,6 +31,6 @@ class CriarTabelaLivros extends Migration
      */
     public function down()
     {
-        Schema::drop('livros');
+        Schema::dropIfExists('livros');
     }
 }
