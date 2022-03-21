@@ -9,13 +9,11 @@ div.mensagem{
 }
 div.listar{
     padding: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 div.listar table{
     border-collapse: collapse;
-    display: block;
     margin: auto;
+    width: 100%;
 }
 div.listar th{
     text-transform: uppercase;
@@ -51,15 +49,15 @@ button.reservar:hover{
     opacity: 0.7;
 }
 button.novo{
+    margin: 15px 0px 1px 400px;
     padding: 15px;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     background-color: greenyellow;
     color: black;
     border: none;
     border-radius: 25px;
     font-family: Arial, Helvetica, sans-serif;
-    margin-left: 500px;
 }
 button.novo:hover{
     background-color: rgb(142, 212, 36);

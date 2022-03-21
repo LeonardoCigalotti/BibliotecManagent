@@ -7,6 +7,7 @@ use App\Livro;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
@@ -16,9 +17,16 @@ class UsuarioController extends Controller
         $livros = Livro::query()
         ->orderBy('title')
         ->get();
-        return view('Usuarios.inicio', compact('livros'));
+        $usuarios = DB::table('livros')
+        ->join('users', function ($join) {
+            $join->on('users.id', '=', 'livros.user_id')
+                 ->where('livros.user_id', '>', 0);
+        })
+        ->select('users.name')
+        ->get();
+        return view('Usuarios.inicio', compact('livros', 'usuarios'));
     }
-    
+
     public function login()
     {
         return view('Usuarios.login');
@@ -30,7 +38,7 @@ class UsuarioController extends Controller
         {
             return redirect()->back()->withErrors('Usuario ou senha incorreta');
         }
-        return redirect()->route('#');
+        return redirect()->route('inicio_admin');
     }
 
     public function registrar()
@@ -46,6 +54,6 @@ class UsuarioController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('#');
+        return redirect()->route('inicio_admin');
     }
 }

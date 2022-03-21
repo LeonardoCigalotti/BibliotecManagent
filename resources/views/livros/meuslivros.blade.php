@@ -1,7 +1,7 @@
-@extends('layout')
+@extends('layoutInicioAdmin')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="{{url('css/inicio.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url('css/meusLivros.css')}}">
 @endsection
 
 @section('header')
@@ -26,7 +26,6 @@
                     <th>Livro</th>
                     <th>Descrição</th>
                     <th>Autor(es)</th>
-                    <th>Registrado por</th>
                     <th>Reservado</th>
                     <th>Ações</th>
                 </tr>
@@ -37,7 +36,6 @@
                     <td>{{ $livro->title}}</td>
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
-                    <td>##</td>
                     <td>##</td>
                     <td>
                         <a href="/admin/meuslivros/{{ $livro->id }}/editar">

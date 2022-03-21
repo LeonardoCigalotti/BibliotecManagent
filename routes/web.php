@@ -26,3 +26,7 @@ Route::get('/entrar', 'Usuario\UsuarioController@login');
 Route::post('/entrar', 'Usuario\UsuarioController@entrar');
 Route::get('/registrar', 'Usuario\UsuarioController@registrar');
 Route::post('/registrar', 'Usuario\UsuarioController@novoRegistro');
+Route::get('/sair', function(){
+    \Illuminate\Support\Facades\Auth::logout();
+    return redirect('/entrar');
+});

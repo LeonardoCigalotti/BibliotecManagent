@@ -15,14 +15,14 @@ label.texto{
     margin-top: 20px;
 }
 input.input, textarea.textarea{
-    width: 120%;
+    width: 90%;
     height: 35px;
     padding-left: 15px;
     border: 1px solid black;
     border-radius: 5px;
 }
 textarea.textarea{
-    height: 100px;
+    height: 150px;
 
 }
 button.formButton{
@@ -35,4 +35,11 @@ button.formButton{
     border-radius: 5px;
     border: 1px solid black;
 }
+button.formButton:hover{
+    background-color: rgb(119, 177, 31);
+    opacity: 0.7;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 

@@ -1,12 +1,11 @@
-
-@extends('layout')
+@extends('layoutInicioAdmin')
 
 @section('css')
-    <link rel="stylesheet" type="text/css" href="{{url('css/cadLivro.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url('css/cadLivro.css')}}">
 @endsection
 
 @section('header')
-    Editando livro {{ $livro->title }}
+    Editando livro
 @endsection
 
 @section('body')

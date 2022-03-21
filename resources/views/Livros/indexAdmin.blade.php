@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layoutInicioAdmin')
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{url('css/inicio.css')}}">
@@ -33,7 +33,7 @@
                     <td>{{ $livro->title}}</td>
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
-                    <td>##</td>
+                    <td>{{$usuarios}}</td>
                     <td>##</td>
                     <td><button class="reservar">Reservar</button></td>
                 </tr>

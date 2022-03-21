@@ -27,7 +27,7 @@ Início/Home
                     <td>{{ $livro->title}}</td>
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
-                    <td>##</td>
+                    <td>{{$usuarios}}</td>
                     <td>##</td>
                     <td><button class="reservar" onclick="myFunction()">Reservar</button></td>
 

@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Livros;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Livro;
+use App\User;
+use Illuminate\Foundation\Auth\User as AuthUser;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class LivrosController extends Controller
 {
@@ -18,12 +22,24 @@ class LivrosController extends Controller
         ->orderBy('title')
         ->get();
         $mensagem = $request->session()->get('mensagem');
-        return view('Livros.indexAdmin', compact('livros', 'mensagem'));
+        $usuarios = DB::table('livros')
+        ->join('users', function ($join) {
+            $join->on('users.id', '=', 'livros.user_id')
+                 ->where('livros.user_id', '>', 0);
+        })
+        ->select('users.name')
+        ->get();
+
+        return view('Livros.indexAdmin', compact('livros', 'mensagem', 'usuarios'));
     }
 
     public function meusLivros(Request $request)
     {
-        $livros = Livro::query()
+        $livros = DB::table('livros')
+        ->join('users', function ($join) {
+            $join->on('users.id', '=', 'livros.user_id')
+                 ->where('livros.user_id', '>', 0);
+        })
         ->orderBy('title')
         ->get();
         $mensagem = $request->session()->get('mensagem');
@@ -32,7 +48,7 @@ class LivrosController extends Controller
 
 
     public function create(){
-        return view ('livros.create');
+        return view ('livros.criar');
     }
 
     public function enviar(Request $request){
@@ -41,12 +57,13 @@ class LivrosController extends Controller
             $request->descricao,
             $request->autor
         ];
+        $usuario = Auth::user()->id;
         $livro = new Livro();
         $livro->title = $request->title;
         $livro->descricao = $request->descricao;
         $livro->autor = $request->autor;
+        $livro->user_id = $usuario;
         $livro->save();
-
         if($livro->save() === true){
             $request->session()->flash(
                 'mensagem', "Livro cadastrado com sucesso!"

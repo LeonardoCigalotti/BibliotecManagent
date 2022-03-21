@@ -41,6 +41,13 @@ aside.menu a{
     margin-top: 60px;
     color: blue;
 }
+aside.menu li#reservas:hover{
+    padding: 0px 0px 15px;
+    color: blue;
+    background-color: #404b69;
+    border-radius: 25px;
+    border: 1px solid black;
+}
 aside.menu a:hover{
     padding: 10px;
     color: blue;
@@ -48,6 +55,13 @@ aside.menu a:hover{
     border-radius: 25px;
     border: 1px solid black;
 
+}
+aside.menu a#none:hover{
+    padding: 0;
+    color:blue;
+    background-color: #404b69;
+    border: none;
+    border-radius: 0px;
 }
 aside.menu footer{
     margin-top: 515px;

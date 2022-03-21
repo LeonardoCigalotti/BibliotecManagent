@@ -1,7 +1,7 @@
-@extends('layout')
+@extends('layoutInicioAdmin')
 
 @section('css')
-    <link rel="stylesheet" type="text/css" href="{{url('css/cadLivro.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url('css/cadLivro.css')}}">
 @endsection
 
 @section('header')
@@ -14,12 +14,12 @@
     <div>
         <div>
             <label for="title" class="texto">Título</label>
-            <input type="text" class="input" name="title" id="title">
+            <input type="text" class="input" name="title" id="title" required>
         </div>
 
         <div>
             <label for="book" class="texto">Descrição do livro</label>
-            <textarea name="descricao" id="book" class="textarea"></textarea>
+            <textarea name="descricao" id="book" class="textarea" required></textarea>
         </div>
 
         <div>
