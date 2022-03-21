@@ -1,7 +1,7 @@
 @extends('layoutInicio')
 
 @section('css')
-<link rel="stylesheet" type="text/css" href="{{url('css/layoutInicio.css')}}">
+<link rel="stylesheet" type="text/css" href="{{url('css/entrar.css')}}">
 @endsection
 
 @section('body')
