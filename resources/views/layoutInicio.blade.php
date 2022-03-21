@@ -12,9 +12,9 @@
     <div class="tabela">
         <aside class="menu">
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Entrar</a></li>
-                <li>Se você não tem conta <a href="#" id="dif">Registre-se</a></li>
+                <li><a href="/inicio">Início</a></li>
+                <li><a href="/entrar">Entrar</a></li>
+                <li>Se você não tem conta <a href="/registrar" id="dif">Registre-se</a></li>
             </ul>
             <footer>
                 <p>&copy;Copyright 2022 Leonardo Cigalotti</p>
