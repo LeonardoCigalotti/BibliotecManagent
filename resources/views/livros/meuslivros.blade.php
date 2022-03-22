@@ -26,7 +26,7 @@
                     <th>Livro</th>
                     <th>Descrição</th>
                     <th>Autor(es)</th>
-                    <th>Reservado</th>
+                    <th>Reservado por</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -36,7 +36,7 @@
                     <td>{{ $livro->title}}</td>
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
-                    <td>##</td>
+                    <td></td>
                     <td>
                         <a href="/admin/meuslivros/{{ $livro->id }}/editar">
                             <button class="editar">Editar</button>
