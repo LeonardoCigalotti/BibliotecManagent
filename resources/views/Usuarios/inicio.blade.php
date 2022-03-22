@@ -26,7 +26,11 @@ Início/Home
                     <td>{{ $livro->title}}</td>
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
-                    <td>##</td>
+                    @if (!empty ($livro->semana))
+                    <td>{{ $livro->semana }} semanas</td>
+                    @else
+                    <td>Disponível</td>
+                    @endif
                     <td><button class="reservar" onclick="myFunction()">Reservar</button></td>
 
                     <script>

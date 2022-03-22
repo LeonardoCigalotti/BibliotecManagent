@@ -32,7 +32,7 @@
                     <td>{{ $livro->title}}</td>
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
-                    <td></td>
+                    <td>{{ $livro->semana }}</td>
                     <td><button class="reservar" onclick="myFunction()"><span nome="livroId" id="{{ $livro->id }}">Reservar</span></button></td>
                                 <script>
                                     function myFunction() {

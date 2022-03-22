@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Livro;
 use App\User;
-use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -18,7 +17,9 @@ class LivrosController extends Controller
     }
     public function inicio(Request $request)
     {
-        $livros = Livro::query()
+        $livros = DB::table('livros')
+        ->leftJoin('reservas', 'reservas.livro_id', '=', 'livros.id')
+        ->select('livros.title','livros.id', 'livros.autor','livros.descricao', 'reservas.semana')
         ->orderBy('title')
         ->get();
 

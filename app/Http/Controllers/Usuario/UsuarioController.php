@@ -14,7 +14,9 @@ class UsuarioController extends Controller
 {
     public function inicio(Request $request)
     {
-        $livros = Livro::query()
+        $livros = DB::table('livros')
+        ->leftJoin('reservas', 'reservas.livro_id', '=', 'livros.id')
+        ->select('livros.title','livros.id', 'livros.autor','livros.descricao', 'reservas.semana')
         ->orderBy('title')
         ->get();
         return view('Usuarios.inicio', compact('livros'));
