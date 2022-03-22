@@ -15,7 +15,7 @@ class CriarReserva extends Migration
     {
         Schema::create('reservas', function(Blueprint $table){
             $table->bigIncrements('id');
-            $table->boolean('reserva');
+            $table->string('semana');
             $table->unsignedBigInteger('livro_id');
             $table->unsignedBigInteger('user_id');
 
