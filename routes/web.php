@@ -21,6 +21,7 @@ Route::put('/admin/meuslivros/update/{id}', 'Livros\LivrosController@update');
 
 Route::get('/admin/minhasreservas', 'Reservas\ReservasController@inicio');
 Route::get('/admin/reservar/{id}', 'Reservas\ReservasController@reservar');
+Route::post('/admin/reservar/{id}', 'Reservas\ReservasController@enviarReserva');
 
 Auth::routes();
 
@@ -29,6 +30,8 @@ Route::get('/entrar', 'Usuario\UsuarioController@login');
 Route::post('/entrar', 'Usuario\UsuarioController@entrar');
 Route::get('/registrar', 'Usuario\UsuarioController@registrar');
 Route::post('/registrar', 'Usuario\UsuarioController@novoRegistro');
+Route::get('/admin/perfil', 'Usuario\UsuarioController@perfil');
+Route::post('/admin/perfil/editar/{id}', 'Usuario\UsuarioController@editar');
 Route::get('/sair', function(){
     \Illuminate\Support\Facades\Auth::logout();
     return redirect('/entrar');
