@@ -18,10 +18,11 @@ class LivrosController extends Controller
     public function inicio(Request $request)
     {
         $livros = DB::table('livros')
-        ->leftJoin('reservas', 'reservas.livro_id', '=', 'livros.id')
-        ->select('livros.title','livros.id', 'livros.autor','livros.descricao', 'reservas.semana')
-        ->orderBy('title')
-        ->get();
+            ->select('livros.title','livros.id', 'livros.autor','livros.descricao', 'reservas.reserva', 'users.name')
+            ->leftJoin('reservas', 'reservas.livro_id', '=', 'livros.id')
+            ->leftJoin('users', 'users.id', '=', 'livros.user_id')
+            ->orderBy('title')
+            ->get();
 
         $mensagem = $request->session()->get('mensagem');
 

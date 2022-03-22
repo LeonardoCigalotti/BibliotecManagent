@@ -9,6 +9,15 @@
 @endsection
 
 @section('body')
+@if ($erro->any())
+    <div class="mesagem">
+        <ul>
+            @foreach ($error->all as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <a href="{{route('criar_livros') }}">
         <button class="novo">Cadastrar livro novo</button>
     </a>

@@ -16,33 +16,35 @@ Início/Home
                     <th>Livro</th>
                     <th>Descrição</th>
                     <th>Autor(es)</th>
-                    <th>Reservado por</th>
+                    <th>Reservado</th>
+                    <th>Registrado por</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($livros as $livro)
-                <tr>
-                    <td>{{ $livro->title}}</td>
-                    <td>{{ $livro->descricao}}</td>
-                    <td>{{ $livro->autor}}</td>
-                    @if (!empty ($livro->semana))
-                    <td>{{ $livro->semana }} semanas</td>
-                    @else
-                    <td>Disponível</td>
-                    @endif
-                    <td><button class="reservar" onclick="myFunction()">Reservar</button></td>
+                    <tr>
+                        <td>{{ $livro->title}}</td>
+                        <td>{{ $livro->descricao }}</td>
+                        <td>{{ $livro->autor }}</td>
+                        @if (!empty($livros->reserva))
+                            <td>{{ $livro->reserva }}</td>
+                        @else
+                            <td>Disponível</td>
+                        @endif
+                        <td>{{ $livro->name }}</td>
+                        <td><button class="reservar" onclick="myFunction()">Reservar</button></td>
 
-                    <script>
-                        function myFunction() {
-                            let text = "Você não está logado\nDeseja logar?";
-                            if (confirm(text) == true) {
-                                window.location.href = "http://localhost:8000/entrar";
-                            } else {
-                                windows.close;
+                        <script>
+                            function myFunction() {
+                                let text = "Você não está logado\nDeseja logar?";
+                                if (confirm(text) == true) {
+                                    window.location.href = "/entrar";
+                                } else {
+                                    windows.close;
+                                }
                             }
-                        }
-                    </script>
+                        </script>
                 @endforeach
             </tbody>
         </table>
