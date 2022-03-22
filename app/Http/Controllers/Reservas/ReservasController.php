@@ -25,4 +25,29 @@ class ReservasController extends Controller
         return view('Reservas.reservar', ['livro' => $livro]);
     }
 
+    public function enviarReserva(Request $request){
+
+        $usuario = Auth::user()->id;
+        $livro = $request->id;
+
+        $reserva = new Reserva();
+
+        $reserva->semana = $request->semana;
+        $reserva->user_id = $usuario;
+        $reserva->livro_id = $livro;
+        $reserva->save();
+
+        if($reserva->save() === true){
+            $request->session()->flash(
+                'mensagem', "Reservado com sucesso!"
+            );
+        } else {
+            $request->session()->flash(
+                'mensagem', "Erro, não pode ser Reservado!"
+            );
+        }
+
+        return redirect()->route('inicio_admin');
+    }
+
 }

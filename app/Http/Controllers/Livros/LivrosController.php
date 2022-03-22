@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Livro;
 use App\User;
-use Illuminate\Foundation\Auth\User as AuthUser;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -21,27 +21,19 @@ class LivrosController extends Controller
         $livros = Livro::query()
         ->orderBy('title')
         ->get();
-        $mensagem = $request->session()->get('mensagem');
-        $usuarios = DB::table('livros')
-        ->join('users', function ($join) {
-            $join->on('users.id', '=', 'livros.user_id')
-                 ->where('livros.user_id', '>', 0);
-        })
-        ->select('users.name')
-        ->get();
 
-        return view('Livros.indexAdmin', compact('livros', 'mensagem', 'usuarios'));
+        $mensagem = $request->session()->get('mensagem');
+
+        return view('Livros.indexAdmin', compact('livros', 'mensagem'));
     }
 
     public function meusLivros(Request $request)
     {
-        $livros = DB::table('livros')
-        ->join('users', function ($join) {
-            $join->on('users.id', '=', 'livros.user_id')
-                 ->where('livros.user_id', '>', 0);
-        })
+        $livros = Livro::query()
+        ->where('user_id', '=', Auth::user()->id)
         ->orderBy('title')
         ->get();
+
         $mensagem = $request->session()->get('mensagem');
         return view('livros.meuslivros', compact('livros', 'mensagem'));
     }

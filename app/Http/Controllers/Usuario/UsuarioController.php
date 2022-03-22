@@ -17,14 +17,7 @@ class UsuarioController extends Controller
         $livros = Livro::query()
         ->orderBy('title')
         ->get();
-        $usuarios = DB::table('livros')
-        ->join('users', function ($join) {
-            $join->on('users.id', '=', 'livros.user_id')
-                 ->where('livros.user_id', '>', 0);
-        })
-        ->select('users.name')
-        ->get();
-        return view('Usuarios.inicio', compact('livros', 'usuarios'));
+        return view('Usuarios.inicio', compact('livros'));
     }
 
     public function login()
@@ -53,6 +46,23 @@ class UsuarioController extends Controller
         $user = User::create($data);
 
         Auth::login($user);
+
+        return redirect()->route('inicio_admin');
+    }
+
+    public function perfil()
+    {
+        $usuarios = User::query()
+        ->where('id', '=', Auth::user()->id)
+        ->get();
+
+        return view('Usuarios.perfil', compact('usuarios'));
+    }
+    public function editar(Request $request){
+
+        User::find($request->id)
+        ->update($request->name)
+        ->where('id', '=', auth::user()->id);
 
         return redirect()->route('inicio_admin');
     }
