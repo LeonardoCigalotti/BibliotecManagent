@@ -22,8 +22,7 @@
                     <th>Livro</th>
                     <th>Descrição</th>
                     <th>Autor(es)</th>
-                    <th>Registrado por</th>
-                    <th>Reservado</th>
+                    <th>Reservado por</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -33,19 +32,18 @@
                     <td>{{ $livro->title}}</td>
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
-                    <td>{{$usuarios}}</td>
-                    <td>##</td>
+                    <td></td>
                     <td><button class="reservar" onclick="myFunction()"><span nome="livroId" id="{{ $livro->id }}">Reservar</span></button></td>
-                        <script>
-                            function myFunction() {
-                                let text = "Você deseja reservar este livro?";
-                                if (confirm(text) == true) {
-                                    window.location.href = "http://localhost:8000/admin/reservar/{{ $livro->id }}";
-                                } else {
-                                    windows.close;
-                                }
-                            }
-                        </script>
+                                <script>
+                                    function myFunction() {
+                                        let text = "Você deseja reservar este livro?";
+                                        if (confirm(text) == true) {
+                                            window.location.href = "http://localhost:8000/admin/reservar/{{ $livro->id }}";
+                                        } else {
+                                            windows.close;
+                                        }
+                                    }
+                                </script>
                 </tr>
                 @endforeach
             </tbody>

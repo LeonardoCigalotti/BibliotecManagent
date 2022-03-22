@@ -16,8 +16,7 @@ Início/Home
                     <th>Livro</th>
                     <th>Descrição</th>
                     <th>Autor(es)</th>
-                    <th>Registrado por</th>
-                    <th>Reservado</th>
+                    <th>Reservado por</th>
                     <th>Ações</th>
                 </tr>
             </thead>
@@ -27,7 +26,6 @@ Início/Home
                     <td>{{ $livro->title}}</td>
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
-                    <td>{{$usuarios}}</td>
                     <td>##</td>
                     <td><button class="reservar" onclick="myFunction()">Reservar</button></td>
 

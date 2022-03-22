@@ -9,9 +9,8 @@
 @endsection
 
 @section('body')
-<form method="post"  action="/admin/meuslivros/update/{id}"  class="cadLivro">
+<form method="post"  action="/admin/reservar/{id}"  class="cadLivro">
     @csrf
-    @method('PUT')
     <div>
         <div>
             <input type="text" name="id" value="{{ $livro->id }}" hidden>
@@ -29,6 +28,16 @@
         <div>
             <label for="autor" class="texto">Autor(es)</label>
             <input type="text" class="input" name="autor" id="autor" value="{{ $livro->autor }}" readonly>
+        </div>
+
+        <div>
+            <label for="semana" class="texto">Quantas semanas?</label>
+            <select id="semana" name="semana">
+                <option value="1">1 Semana</option>
+                <option value="2">2 Semanas</option>
+                <option value="3">3 Semanas</option>
+                <option value="4">4 Semanas</option>
+            </select>
         </div>
 
         <button type="submit" class="formButton">Reservar Livro</button>

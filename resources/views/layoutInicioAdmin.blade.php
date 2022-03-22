@@ -15,7 +15,7 @@
             <li><a href="/admin/index">Inicio</a></li>
                 <li><a href="/admin/meuslivros">Meus Livros</a></li>
                 <li id="reservas"><a id="none" href="/admin/minhasreservas">Minhas Reservas</a></li>
-                <li><a href="#">Meu Perfil</a></li>
+                <li><a href="/admin/perfil">Meu Perfil</a></li>
                 <li><a href="/sair">Sair</a></li>
             </ul>
             <footer>
