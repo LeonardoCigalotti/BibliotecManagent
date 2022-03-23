@@ -42,7 +42,7 @@
                         <td>{{ $livro->title}}</td>
                         <td>{{ $livro->descricao }}</td>
                         <td>{{ $livro->autor }}</td>
-                        @if (!empty($livros->reserva))
+                        @if (!empty($livro->reserva))
                             <td>Reservado</td>
                         @else
                             <td>Disponível</td>

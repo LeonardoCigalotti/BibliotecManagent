@@ -27,8 +27,8 @@ Início/Home
                         <td>{{ $livro->title}}</td>
                         <td>{{ $livro->descricao }}</td>
                         <td>{{ $livro->autor }}</td>
-                        @if (!empty($livros->reserva))
-                            <td>{{ $livro->reserva }}</td>
+                        @if (!empty($livro->reserva))
+                            <td>Reservado</td>
                         @else
                             <td>Disponível</td>
                         @endif

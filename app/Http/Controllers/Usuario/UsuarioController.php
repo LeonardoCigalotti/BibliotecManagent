@@ -53,8 +53,8 @@ class UsuarioController extends Controller
             $user = User::create($data);
             Auth::login($user);
 
-
             return redirect()->route('inicio_admin');
+            
         } catch(\Exception $error){
             return redirect()
                 ->back()

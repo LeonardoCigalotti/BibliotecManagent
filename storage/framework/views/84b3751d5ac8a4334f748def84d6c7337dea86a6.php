@@ -25,8 +25,8 @@ Início/Home
                         <td><?php echo e($livro->title); ?></td>
                         <td><?php echo e($livro->descricao); ?></td>
                         <td><?php echo e($livro->autor); ?></td>
-                        <?php if(!empty($livros->reserva)): ?>
-                            <td><?php echo e($livro->reserva); ?></td>
+                        <?php if(!empty($livro->reserva)): ?>
+                            <td>Reservado</td>
                         <?php else: ?>
                             <td>Disponível</td>
                         <?php endif; ?>

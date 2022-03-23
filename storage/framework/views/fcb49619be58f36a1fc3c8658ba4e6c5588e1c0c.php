@@ -29,7 +29,7 @@
         </div>
 
         <div>
-            <label for="reservaDias" class="texto">Quntidade de dias (max 10 dias, min 3 dias)</label>
+            <label for="reservaDias" class="texto">Quantidade de dias (max 10 dias, min 3 dias)</label>
             <input type="number"  id="reservaDias" name="reservaDias" min="3" max="10" value="3">
         </div>
 
