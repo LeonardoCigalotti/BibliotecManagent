@@ -50,3 +50,6 @@ div.mensagem{
     color: black;
     display:block;
 }
+div.mensagem li{
+    list-style: none;
+}
