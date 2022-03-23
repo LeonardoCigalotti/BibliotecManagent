@@ -18,7 +18,7 @@ class LivrosController extends Controller
     public function inicio(Request $request)
     {
         $livros = DB::table('livros')
-            ->select('livros.title','livros.id', 'livros.autor','livros.descricao', 'reservas.reserva', 'users.name')
+            ->select('livros.*', 'reservas.reserva', 'users.name')
             ->leftJoin('reservas', 'reservas.livro_id', '=', 'livros.id')
             ->leftJoin('users', 'users.id', '=', 'livros.user_id')
             ->orderBy('title')
@@ -31,10 +31,12 @@ class LivrosController extends Controller
 
     public function meusLivros(Request $request)
     {
-        $livros = Livro::query()
-        ->where('user_id', '=', Auth::user()->id)
-        ->orderBy('title')
-        ->get();
+        $livros = DB::table('livros')
+            ->select('livros.*', 'reservas.reservaDias')
+            ->where('livros.user_id', '=', Auth::user()->id)
+            ->leftjoin('reservas', 'reservas.livro_id', '=', 'livros.id')
+            ->orderBy('title')
+            ->get();
 
         $mensagem = $request->session()->get('mensagem');
         return view('livros.meuslivros', compact('livros', 'mensagem'));
@@ -51,21 +53,28 @@ class LivrosController extends Controller
             $request->descricao,
             $request->autor
         ];
+
         $usuario = Auth::user()->id;
+
         $livro = new Livro();
+
         $livro->title = $request->title;
         $livro->descricao = $request->descricao;
         $livro->autor = $request->autor;
         $livro->user_id = $usuario;
         $livro->save();
+
         if($livro->save() === true){
-            $request->session()->flash(
-                'mensagem', "Livro cadastrado com sucesso!"
-            );
+
+            $request->session()
+                ->flash(
+                    'mensagem', "Livro cadastrado com sucesso!"
+                );
         } else {
-            $request->session()->flash(
-                'mensagem', "Erro, livro não foi cadastrado no banco de dados!"
-            );
+            $request->session()
+                ->flash(
+                    'mensagem', "Erro, livro não foi cadastrado no banco de dados!"
+                );
         }
 
         return redirect()->route('inicio_admin');
@@ -73,12 +82,21 @@ class LivrosController extends Controller
 
     public function excluir(Request $request)
     {
-        Livro::destroy($request->id);
-        $request->session()
-        ->flash(
-            'mensagem', "O livro foi excluído com sucesso!"
-        );
-        return redirect()->route('livros_admin');
+        try {
+            Livro::destroy($request->id);
+
+            $request->session()
+                ->flash('mensagem', "O livro foi excluído com sucesso!");
+
+            return redirect()->route('livros_admin');
+
+        } catch(\Exception $error){
+
+            return redirect()
+                ->back()
+                ->withErrors('Este livro tem uma reserva e não pode ser excluído');
+        }
+
     }
 
     public function editar(int $id)
@@ -91,7 +109,7 @@ class LivrosController extends Controller
     public function update(Request $request)
     {
         Livro::find($request->id)
-        ->update($request->all());
+            ->update($request->all());
 
         return redirect()->route('livros_admin');
     }

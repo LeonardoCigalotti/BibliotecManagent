@@ -33,7 +33,9 @@ class UsuarioController extends Controller
     {
         if(!Auth::attempt($request->only(['email', 'password'])))
         {
-            return redirect()->back()->withErrors('Usuario ou senha incorreta');
+            return redirect()
+                ->back()
+                ->withErrors('Usuario ou senha incorreta');
         }
         return redirect()->route('inicio_admin');
     }
@@ -45,29 +47,19 @@ class UsuarioController extends Controller
 
     public function novoRegistro(Request $request)
     {
-        $data = $request->except('_token');
-        $data['password'] = Hash::make($data['password']);
-        $user = User::create($data);
+        try {
+            $data = $request->except('_token');
+            $data['password'] = Hash::make($data['password']);
+            $user = User::create($data);
+            Auth::login($user);
 
-        Auth::login($user);
 
-        return redirect()->route('inicio_admin');
-    }
+            return redirect()->route('inicio_admin');
+        } catch(\Exception $error){
+            return redirect()
+                ->back()
+                ->withErrors('Email já cadastrado!');
+        }
 
-    public function perfil()
-    {
-        $usuarios = User::query()
-        ->where('id', '=', Auth::user()->id)
-        ->get();
-
-        return view('Usuarios.perfil', compact('usuarios'));
-    }
-    public function editar(Request $request){
-
-        User::find($request->id)
-        ->update($request->name)
-        ->where('id', '=', auth::user()->id);
-
-        return redirect()->route('inicio_admin');
     }
 }
