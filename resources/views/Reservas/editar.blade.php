@@ -5,7 +5,7 @@
 @endsection
 
 @section('header')
-    Editando livro
+    Editando Reserva
 @endsection
 
 @section('body')

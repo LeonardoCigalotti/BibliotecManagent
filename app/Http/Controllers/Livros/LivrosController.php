@@ -15,6 +15,7 @@ class LivrosController extends Controller
     {
         $this->middleware('auth');
     }
+
     public function inicio(Request $request)
     {
         $livros = DB::table('livros')

@@ -7,24 +7,24 @@
 @section('body')
 
 @section('header')
-Perfil
+    Perfil
 @endsection
-            @foreach ($usuarios as $usuario)
+        @foreach ($usuario as $user)
             <div class="corpo">
                 <label>Nome: </label>
-                <input type="text" value="{{ $usuario->name }}" readonly><br>
+                <input type="text" value="{{ $user->name }}" readonly><br>
             </div>
 
             <div class="corpo">
                 <label>E-mail: </label>
-                <input type="email" value="{{ $usuario->email }}" readonly>
+                <input type="email" value="{{ $user->email }}" readonly>
             </div>
 
             <div class="corpo">
-                <button> Trocar senha</button>
+                <a href="/admin/perfil/editar/{id}">
+                    <button>Editar perfil</button>
+                </a>
             </div>
-            @endforeach
-
-
+        @endforeach
 @endsection
 

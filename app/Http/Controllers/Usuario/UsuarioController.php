@@ -62,4 +62,67 @@ class UsuarioController extends Controller
         }
 
     }
+
+    public function perfil()
+    {
+        $usuario = DB::table('users')
+            ->select('users.*')
+            ->where('users.id', '=', Auth::user()->id)
+            ->get();
+
+        return view('Usuarios.perfil', compact('usuario'));
+    }
+
+    public function editarperfil()
+    {
+        $usuario = User::find(Auth::user()->id);
+
+        return view('Usuarios.editarperfil', ['usuario' => $usuario]);
+    }
+
+    public function update(Request $request)
+    {
+
+        $id = $request->id;
+        $nome = $request->name;
+        $email = $request->email;
+
+        $comparar = User::query()
+            ->select('users.email')
+            ->where('users.email', '=', $email)
+            ->where('users.id', '=', $id)
+            ->get();
+
+        $comparar2 = User::query()
+            ->select('users.email')
+            ->where('users.email', '=', $email)
+            ->get();
+
+        if(!empty ($comparar[0])){
+
+            DB::table('users')
+            ->where('users.id', '=', $id)
+            ->update(['users.name' => $nome]);
+
+            return redirect()->route('inicio_admin');
+
+        } else {
+
+            if(!empty ($comparar2[0])){
+
+                return redirect()
+                    ->back()
+                    ->withErrors('Email já cadastrado!');
+
+            } else {
+
+                DB::table('users')
+                    ->where('users.id', '=', $id)
+                    ->update(['users.name' => $nome], ['users.email' => $email]);
+
+                return redirect()->route('inicio_admin');
+            }
+        }
+    }
+
 }

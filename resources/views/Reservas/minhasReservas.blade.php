@@ -5,7 +5,7 @@
 @endsection
 
 @section('header')
-    Meus Livros
+    Minhas Reservas
 @endsection
 
 @section('body')
