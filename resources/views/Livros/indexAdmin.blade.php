@@ -14,6 +14,15 @@
         <p>   {{ $mensagem }} </p>
     </div>
     @endif
+    @if ($errors->any())
+        <div class="mensagem">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <div class="listar">
         <table>
@@ -34,22 +43,26 @@
                         <td>{{ $livro->descricao }}</td>
                         <td>{{ $livro->autor }}</td>
                         @if (!empty($livros->reserva))
-                            <td>{{ $livro->reserva }}</td>
+                            <td>Reservado</td>
                         @else
                             <td>Disponível</td>
                         @endif
                         <td>{{ $livro->name }}</td>
-                    <td><button class="reservar" onclick="myFunction()"><span nome="livroId" id="{{ $livro->id }}">Reservar</span></button></td>
-                                <script>
-                                    function myFunction() {
-                                        let text = "Você deseja reservar este livro?";
-                                        if (confirm(text) == true) {
-                                            window.location.href = "http://localhost:8000/admin/reservar/{{ $livro->id }}";
-                                        } else {
-                                            windows.close;
-                                        }
+                        <td>
+                            <a href="/admin/reservar/{{ $livro->id }}">
+                                <button class="reservar" onclick="myFunction()">Reservar</button>
+                            </a>
+                        </td>
+                            <script>
+                                function myFunction() {
+                                    let text = "Você deseja reservar este livro?";
+                                    if (confirm(text) == true) {
+                                        windows.close;
+                                    } else {
+                                        windows.close;
                                     }
-                                </script>
+                                }
+                            </script>
                 </tr>
                 @endforeach
             </tbody>

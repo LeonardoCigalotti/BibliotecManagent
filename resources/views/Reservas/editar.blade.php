@@ -5,12 +5,13 @@
 @endsection
 
 @section('header')
-    Reservando livro
+    Editando livro
 @endsection
 
 @section('body')
-<form method="post"  action="/admin/reservar/{id}"  class="cadLivro">
+<form method="post"  action="/admin/minhasreservas/update/{id}"  class="cadLivro">
     @csrf
+    @method('PUT')
     <div>
         <div>
             <input type="text" name="id" value="{{ $livro->id }}" hidden>
@@ -31,12 +32,12 @@
         </div>
 
         <div>
-            <label for="reservaDias" class="texto">Quantidade de dias (max 10 dias, min 3 dias)</label>
-            <input type="number"  id="reservaDias" name="reservaDias" min="3" max="10" value="3">
+            <label for="reservaDias" class="texto">Acrescentar dias (max 5 dias, min 1 dia)</label>
+            <input type="number"  id="reservaDias" name="reservaDias" min="1" max="5" value="5">
         </div>
 
 
-        <button type="submit" class="formButton">Reservar Livro</button>
+        <button type="submit" class="formButton">Editar Reserva</button>
     </div>
 </form>
 @endsection

@@ -5,14 +5,23 @@
 @endsection
 
 @section('header')
-    Minhas Reservas
+    Meus Livros
 @endsection
 
 @section('body')
+    @if ($errors->any())
+        <div class="mensagem">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     @if(!empty($mensagem))
-    <div class="mensagem">
-        <p>   {{ $mensagem }} </p>
-    </div>
+        <div class="mensagem">
+            <p> {{ $mensagem }} </p>
+        </div>
     @endif
 
     <div class="listar">
@@ -23,31 +32,33 @@
                     <th>Descrição</th>
                     <th>Autor(es)</th>
                     <th>Reservado por</th>
+                    <th>Registrado por</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
+                @foreach($reservas as $reserva)
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $reserva->title }}</td>
+                    <td>{{ $reserva->descricao }}</td>
+                    <td>{{ $reserva->autor }}</td>
+                    <td>{{ $reserva->reservaDias }} dias</td>
+                    <td>{{ $reserva->name }}</td>
                     <td>
-                        <a href="/admin/meuslivros//editar">
+                        <a href="/admin/minhasreservas/{{ $reserva->id }}/editar">
                             <button class="editar">Editar</button>
                         </a>
-                        <form method="post" action="/admin/meuslivros/excluir/"
-                        onsubmit="return confirm('Tem certeza que deseja remover este livro??')">
+                        <form method="post" action="/admin/minhasreservas/excluir/{{ $reserva->id }}"
+                        onsubmit="return confirm('Tem certeza que deseja cancelar esta reserva??')">
                             @csrf
                             @method('DELETE')
                             <button class="excluir">Excluir</button>
                         </form>
                     </td>
                 </tr>
+                @endforeach
             </tbody>
         </table>
     </div>
 
 @endsection
-
-

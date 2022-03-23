@@ -9,6 +9,16 @@
 @section('header')
 Entrar/Login
 @endsection
+
+@if ($errors->any())
+    <div class="mensagem">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
             <form method="POST">
                 @csrf
                 <label for="email">E-mail:</label>

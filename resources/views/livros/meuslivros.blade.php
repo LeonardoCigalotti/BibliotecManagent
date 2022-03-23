@@ -9,23 +9,22 @@
 @endsection
 
 @section('body')
-@if ($erro->any())
-    <div class="mesagem">
-        <ul>
-            @foreach ($error->all as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
     <a href="{{route('criar_livros') }}">
         <button class="novo">Cadastrar livro novo</button>
     </a>
-
+    @if ($errors->any())
+        <div class="mensagem">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     @if(!empty($mensagem))
-    <div class="mensagem">
-        <p>   {{ $mensagem }} </p>
-    </div>
+        <div class="mensagem">
+            <p> {{ $mensagem }} </p>
+        </div>
     @endif
 
     <div class="listar">
@@ -45,7 +44,11 @@
                     <td>{{ $livro->title}}</td>
                     <td>{{ $livro->descricao}}</td>
                     <td>{{ $livro->autor}}</td>
-                    <td></td>
+                    @if (!empty($livro->reservaDias))
+                        <td>{{ $livro->reservaDias }} dias</td>
+                    @else
+                        <td>Nenhuma reserva</td>
+                    @endif
                     <td>
                         <a href="/admin/meuslivros/{{ $livro->id }}/editar">
                             <button class="editar">Editar</button>

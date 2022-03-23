@@ -9,6 +9,16 @@
 @section('header')
 Novo Registro/Register
 @endsection
+
+@if ($errors->any())
+    <div class="mensagem">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
             <form method="POST">
                 @csrf
                 <label for="name">Nome:</label>
