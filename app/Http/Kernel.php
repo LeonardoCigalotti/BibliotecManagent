@@ -11,6 +11,7 @@ class Kernel extends HttpKernel
      *
      * These middleware are run during every request to your application.
      *
+<<<<<<< HEAD
      * @var array<int, class-string|string>
      */
     protected $middleware = [
@@ -18,6 +19,13 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrustProxies::class,
         \Fruitcake\Cors\HandleCors::class,
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
+=======
+     * @var array
+     */
+    protected $middleware = [
+        \App\Http\Middleware\TrustProxies::class,
+        \App\Http\Middleware\CheckForMaintenanceMode::class,
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
@@ -26,7 +34,11 @@ class Kernel extends HttpKernel
     /**
      * The application's route middleware groups.
      *
+<<<<<<< HEAD
      * @var array<string, array<int, class-string|string>>
+=======
+     * @var array
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
      */
     protected $middlewareGroups = [
         'web' => [
@@ -40,9 +52,14 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
+<<<<<<< HEAD
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+=======
+            'throttle:60,1',
+            'bindings',
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
         ],
     ];
 
@@ -51,17 +68,47 @@ class Kernel extends HttpKernel
      *
      * These middleware may be assigned to groups or used individually.
      *
+<<<<<<< HEAD
      * @var array<string, class-string|string>
+=======
+     * @var array
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
      */
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+<<<<<<< HEAD
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
+=======
+        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
+        'can' => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
     ];
+<<<<<<< HEAD
+=======
+
+    /**
+     * The priority-sorted list of middleware.
+     *
+     * This forces non-global middleware to always be in the given order.
+     *
+     * @var array
+     */
+    protected $middlewarePriority = [
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \App\Http\Middleware\Authenticate::class,
+        \Illuminate\Session\Middleware\AuthenticateSession::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        \Illuminate\Auth\Middleware\Authorize::class,
+    ];
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
 }

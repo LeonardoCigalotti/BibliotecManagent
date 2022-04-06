@@ -1,6 +1,9 @@
 <?php
 
+<<<<<<< HEAD
 use Monolog\Handler\NullHandler;
+=======
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
 
@@ -21,6 +24,7 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+<<<<<<< HEAD
     | Deprecations Log Channel
     |--------------------------------------------------------------------------
     |
@@ -34,6 +38,8 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+=======
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
     | Log Channels
     |--------------------------------------------------------------------------
     |
@@ -50,20 +56,32 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
+<<<<<<< HEAD
             'channels' => ['single'],
+=======
+            'channels' => ['daily'],
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
             'ignore_exceptions' => false,
         ],
 
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
+<<<<<<< HEAD
             'level' => env('LOG_LEVEL', 'debug'),
+=======
+            'level' => 'debug',
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
         ],
 
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/laravel.log'),
+<<<<<<< HEAD
             'level' => env('LOG_LEVEL', 'debug'),
+=======
+            'level' => 'debug',
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
             'days' => 14,
         ],
 
@@ -72,12 +90,20 @@ return [
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
             'username' => 'Laravel Log',
             'emoji' => ':boom:',
+<<<<<<< HEAD
             'level' => env('LOG_LEVEL', 'critical'),
+=======
+            'level' => 'critical',
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
         ],
 
         'papertrail' => [
             'driver' => 'monolog',
+<<<<<<< HEAD
             'level' => env('LOG_LEVEL', 'debug'),
+=======
+            'level' => 'debug',
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
             'handler' => SyslogUdpHandler::class,
             'handler_with' => [
                 'host' => env('PAPERTRAIL_URL'),
@@ -87,7 +113,10 @@ return [
 
         'stderr' => [
             'driver' => 'monolog',
+<<<<<<< HEAD
             'level' => env('LOG_LEVEL', 'debug'),
+=======
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
             'handler' => StreamHandler::class,
             'formatter' => env('LOG_STDERR_FORMATTER'),
             'with' => [
@@ -97,11 +126,16 @@ return [
 
         'syslog' => [
             'driver' => 'syslog',
+<<<<<<< HEAD
             'level' => env('LOG_LEVEL', 'debug'),
+=======
+            'level' => 'debug',
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
         ],
 
         'errorlog' => [
             'driver' => 'errorlog',
+<<<<<<< HEAD
             'level' => env('LOG_LEVEL', 'debug'),
         ],
 
@@ -112,6 +146,9 @@ return [
 
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
+=======
+            'level' => 'debug',
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
         ],
     ],
 
