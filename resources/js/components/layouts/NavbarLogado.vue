@@ -1,13 +1,19 @@
 <template>
   <ul class="navbar-nav mr-auto">
     <li class="nav-item">
-      <router-link class="nav-link" to="/">Home</router-link>
+      <router-link class="nav-link" to="/admin/inicio">Home</router-link>
     </li>
     <li class="nav-item">
-      <router-link class="nav-link" to="/login">Login</router-link>
+      <router-link class="nav-link" to="/admin/meus-livros">Meus Livros</router-link>
     </li>
     <li class="nav-item">
-      <router-link to="/cadastre-se" class="nav-link">Registre-se</router-link>
+      <router-link to="/admin/minhas-reservas" class="nav-link">Minhas Reservas</router-link>
+    </li>
+    <li class="nav-item">
+      <router-link to="/admin/perfil" class="nav-link">Perfil</router-link>
+    </li>
+    <li class="nav-item">
+      <router-link to="/sair" class="nav-link">Logout</router-link>
     </li>
   </ul>
 </template>

@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Usuario;
 
 use App\Http\Controllers\Controller;
-use App\Livro;
-use App\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
+
     public function inicio(Request $request)
     {
         $livros = DB::table('livros')
@@ -21,12 +21,7 @@ class UsuarioController extends Controller
             ->orderBy('title')
             ->get();
 
-        return view('Usuarios.inicio', compact('livros'));
-    }
-
-    public function login()
-    {
-        return view('Usuarios.login');
+        return view('layout.app', compact('livros'));
     }
 
     public function entrar(Request $request)
@@ -37,12 +32,7 @@ class UsuarioController extends Controller
                 ->back()
                 ->withErrors('Usuario ou senha incorreta');
         }
-        return redirect()->route('inicio_admin');
-    }
-
-    public function registrar()
-    {
-        return view('Usuarios.registrar');
+        return redirect()->route('layout.app');
     }
 
     public function novoRegistro(Request $request)
@@ -50,10 +40,8 @@ class UsuarioController extends Controller
         try {
             $data = $request->except('_token');
             $data['password'] = Hash::make($data['password']);
-            $user = User::create($data);
-            Auth::login($user);
-
-            return redirect()->route('inicio_admin');
+            User::create($data);
+            //Auth::login($user);
             
         } catch(\Exception $error){
             return redirect()
@@ -70,14 +58,14 @@ class UsuarioController extends Controller
             ->where('users.id', '=', Auth::user()->id)
             ->get();
 
-        return view('Usuarios.perfil', compact('usuario'));
+        return view('layout.app', compact('usuario'));
     }
 
     public function editarperfil()
     {
         $usuario = User::find(Auth::user()->id);
 
-        return view('Usuarios.editarperfil', ['usuario' => $usuario]);
+        return view('layout.app', ['usuario' => $usuario]);
     }
 
     public function update(Request $request)
@@ -104,7 +92,7 @@ class UsuarioController extends Controller
             ->where('users.id', '=', $id)
             ->update(['users.name' => $nome]);
 
-            return redirect()->route('inicio_admin');
+            return redirect()->route('layout.app');
 
         } else {
 
@@ -120,7 +108,7 @@ class UsuarioController extends Controller
                     ->where('users.id', '=', $id)
                     ->update(['users.name' => $nome], ['users.email' => $email]);
 
-                return redirect()->route('inicio_admin');
+                return redirect()->route('layout.app');
             }
         }
     }

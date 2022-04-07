@@ -15,6 +15,9 @@
     </div>
 </template>
 
+
+
+
 <style scoped>
 form{
     display: block;
@@ -30,6 +33,7 @@ form input{
     height: 40px;
     margin-top: 8px;
     padding: 3px;
+    margin-left: 5px;
 }
 form button{
     background-color: #04AA6D;

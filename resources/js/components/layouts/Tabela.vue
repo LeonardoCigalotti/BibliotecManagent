@@ -19,7 +19,8 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <TabelaDeslogado />
+                        <TabelaLogado v-if="usuarioEstaLogado" />
+                        <TabelaDeslogado v-else />
                     </td>
                 </tr>
             </tbody>
@@ -29,10 +30,12 @@
 
 <script>
 import TabelaDeslogado from './TabelaDeslogado.vue';
+import TabelaLogado from './TabelaLogado.vue';
 
 export default {
     components: {
-        TabelaDeslogado
+        TabelaDeslogado,
+        TabelaLogado
   }
 }
 </script>

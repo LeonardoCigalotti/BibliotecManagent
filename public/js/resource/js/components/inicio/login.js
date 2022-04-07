@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nform[data-v-40405b6a]{\n    display: block;\n    text-align: center;\n    padding: 20px;\n}\nform label[data-v-40405b6a]{\n    font-size: xx-large;\n    text-align: center;\n}\nform input[data-v-40405b6a]{\n    width: 600px;\n    height: 40px;\n    margin-top: 8px;\n    padding: 3px;\n}\nform button[data-v-40405b6a]{\n    background-color: #04AA6D;\n    border: none;\n    color: white;\n    padding: 16px 32px;\n    text-decoration: none;\n    margin: 4px 2px;\n    cursor: pointer;\n    border-radius: 25px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nform[data-v-40405b6a]{\n    display: block;\n    text-align: center;\n    padding: 20px;\n}\nform label[data-v-40405b6a]{\n    font-size: xx-large;\n    text-align: center;\n}\nform input[data-v-40405b6a]{\n    width: 600px;\n    height: 40px;\n    margin-top: 8px;\n    padding: 3px;\n    margin-left: 5px;\n}\nform button[data-v-40405b6a]{\n    background-color: #04AA6D;\n    border: none;\n    color: white;\n    padding: 16px 32px;\n    text-decoration: none;\n    margin: 4px 2px;\n    cursor: pointer;\n    border-radius: 25px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
