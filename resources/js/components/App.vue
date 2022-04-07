@@ -4,9 +4,6 @@
         <Barra />
     </aside>
     <main class="conteudo">
-        <header>
-            Gerenciamento Biblioteca
-        </header>
         <router-view></router-view>
     </main>
     </div>

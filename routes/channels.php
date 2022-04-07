@@ -1,10 +1,5 @@
 <?php
 
-<<<<<<< HEAD
-use Illuminate\Support\Facades\Broadcast;
-
-=======
->>>>>>> 90e6203f02f4568467df115cb79298baa6769451
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels
@@ -16,10 +11,9 @@ use Illuminate\Support\Facades\Broadcast;
 |
 */
 
-<<<<<<< HEAD
-Broadcast::channel('App.Models.User.{id}', function ($user, $id) {
-=======
+use Illuminate\Support\Facades\Broadcast;
+
+
 Broadcast::channel('App.User.{id}', function ($user, $id) {
->>>>>>> 90e6203f02f4568467df115cb79298baa6769451
     return (int) $user->id === (int) $id;
 });

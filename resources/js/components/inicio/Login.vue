@@ -1,7 +1,9 @@
 <template>
     <div>
+        <header>
+            Gerenciamento Biblioteca - Login
+        </header>
         <form method="POST">
-            @csrf
             <label for="email">E-mail:</label>
             <input type="text" id="email" name="email" required><br>
 

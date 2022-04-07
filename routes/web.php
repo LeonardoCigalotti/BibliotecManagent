@@ -1,10 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
 
-=======
->>>>>>> 90e6203f02f4568467df115cb79298baa6769451
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,12 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-<<<<<<< HEAD
 Route::get('{any}', function () {
     return view('layout.app');
 })->where('any', '.*');
-=======
-Route::get('/admin/index', 'Livros\LivrosController@inicio')
+
+/*Route::get('/admin/index', 'Livros\LivrosController@inicio')
     ->name('inicio_admin');
 Route::get('/admin/meuslivros', 'Livros\LivrosController@meusLivros')
     ->name('livros_admin');
@@ -60,4 +56,4 @@ Route::get('/sair', function(){
     \Illuminate\Support\Facades\Auth::logout();
     return redirect('/entrar');
 });
->>>>>>> 90e6203f02f4568467df115cb79298baa6769451
+*/

@@ -1,9 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
-<<<<<<< HEAD
+    "/js/resource/js/components/inicio/index.js": "/js/resource/js/components/inicio/index.js",
     "/js/resource/js/components/inicio/registrar.js": "/js/resource/js/components/inicio/registrar.js",
-    "/js/resource/js/components/inicio/welcome.js": "/js/resource/js/components/inicio/welcome.js",
-=======
->>>>>>> 90e6203f02f4568467df115cb79298baa6769451
+    "/js/resource/js/components/inicio/login.js": "/js/resource/js/components/inicio/login.js",
     "/css/app.css": "/css/app.css"
 }

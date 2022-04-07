@@ -1,7 +1,9 @@
 <template>
     <div>
+        <header>
+            Gerenciamento Biblioteca - Registrar-se
+        </header>
         <form method="POST">
-            @csrf
             <label for="name">Nome:</label>
             <input type="text" id="name" name="name" required><br>
 

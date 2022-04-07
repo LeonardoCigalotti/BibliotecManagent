@@ -6,16 +6,10 @@
 .env
 .env.backup
 .phpunit.result.cache
-<<<<<<< HEAD
 docker-compose.override.yml
-=======
->>>>>>> 90e6203f02f4568467df115cb79298baa6769451
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-<<<<<<< HEAD
 /.idea
 /.vscode
-=======
->>>>>>> 90e6203f02f4568467df115cb79298baa6769451
