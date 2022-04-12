@@ -1,21 +1,14 @@
 <template>
-    <div class="tabela">
-    <aside>
-        <Barra />
-    </aside>
-    <main class="conteudo">
-        <router-view></router-view>
-    </main>
-    </div>
+        <div class="tabela">
+            <router-view></router-view>
+        </div>
 </template>
 
 <script>
-import Barra from './layouts/Barra.vue';
+
 
 export default {
-    components: {
-        Barra
-  }
+
 }
 </script>
 

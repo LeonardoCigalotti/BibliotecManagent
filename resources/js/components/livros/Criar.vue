@@ -1,37 +1,76 @@
 <template>
-    <div>
-        <header>
-            Gerenciamento Biblioteca - Criar Livro
-        </header>
-        <form method="post"  action=""  class="cadLivro">
-            <div>
-                <div>
-                    <input type="text" name="id" hidden>
-                </div>
-                <div>
-                    <label for="title" class="texto">Título</label>
-                    <input type="text" class="input" name="title" id="title" required>
-                </div>
+        <aside class="menu">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                <router-link class="nav-link" to="/admin/index">Home</router-link>
+                </li>
+                <li class="nav-item">
+                <router-link class="nav-link" to="/admin/meuslivros">Meus Livros</router-link>
+                </li>
+                <li class="nav-item">
+                <router-link to="/admin/minhas-reservas" class="nav-link">Minhas Reservas</router-link>
+                </li>
+                <li class="nav-item">
+                <router-link to="/admin/perfil" class="nav-link">Perfil</router-link>
+                </li>
+                <li class="nav-item">
+                <router-link to="/sair" class="nav-link">Logout</router-link>
+                </li>
+            </ul>
+        </aside>
 
-                <div>
-                    <label for="book" class="texto">Descrição do livro</label>
-                    <textarea name="descricao" id="book" class="textarea" required></textarea>
-                </div>
+        <main class="conteudo">
+            <header>
+                Gerenciamento Biblioteca - Novo Livro
+            </header>
 
+           <form  @submit.prevent="criarLivro" class="cadLivro">
                 <div>
-                    <label for="autor" class="texto">Autor(es)</label>
-                    <input type="text" class="input" name="autor" id="autor" required>
-                </div>
+                    <div>
+                        <label for="title" class="texto">Título</label>
+                        <input v-model="title" type="text" class="input" name="title" id="title" required>
+                    </div>
 
-                <button type="submit" class="formButton">Cadastrar Livro</button>
-            </div>
-        </form>
-    </div>
+                    <div>
+                        <label for="book" class="texto">Descrição do livro</label>
+                        <textarea v-model="descricao" name="descricao" id="book" class="textarea" required></textarea>
+                    </div>
+
+                    <div>
+                        <label for="autor" class="texto">Autor(es)</label>
+                        <input v-model="autor" type="text" class="input" name="autor" id="autor" required>
+                    </div>
+
+                    <button type="submit" class="formButton">Cadastrar Livro</button>
+                </div>
+            </form>
+        </main>
 </template>
 
 <script>
 export default {
-    
+    data(){
+        return {
+            title:'',
+            descricao:'',
+            autor:''
+        }
+    },
+    methods: {
+        criarLivro(){
+            let title = this.title;
+            let descricao = this.descricao;
+            let autor = this.autor;
+             this.axios.get(`/api/newlivro?title=${title}&descricao=${descricao}&autor=${autor}`)
+                    .then(promise =>(
+                       //this.$router.push({name:"indexAdmin"})
+                       console.log(promise.data.data)
+                    ))
+                    .catch(error =>{
+                        console.log(error)
+                    });
+        }
+    }
 }
 </script>
 
@@ -78,5 +117,37 @@ button.formButton:hover{
     opacity: 0.7;
     text-decoration: underline;
     cursor: pointer;
+}
+ul {
+    padding-inline-start: 5px;
+    margin-top: 80px;
+    list-style: none;
+    width: 120px;
+    height: 50px;
+    padding: 10px;
+}
+
+li {
+    position: relative;
+    margin-top: 40px;
+    list-style: none;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    padding: 10px 0px 0px;
+}
+.nav-link {
+    color: rgb(0, 0, 255);
+    cursor: pointer;
+    border-radius: 25px;
+}
+.nav-link:hover {
+    padding: 10px;
+    color: blue;
+    background-color: #ababab;
+    border-radius: 25px;
+    border: 1px solid black;
+    cursor: pointer;
+    text-decoration-line: underline;
 }
 </style>

@@ -3,5 +3,10 @@
     "/js/resource/js/components/inicio/index.js": "/js/resource/js/components/inicio/index.js",
     "/js/resource/js/components/inicio/registrar.js": "/js/resource/js/components/inicio/registrar.js",
     "/js/resource/js/components/inicio/login.js": "/js/resource/js/components/inicio/login.js",
+    "/js/resource/js/components/usuario/perfil.js": "/js/resource/js/components/usuario/perfil.js",
+    "/js/resource/js/components/livros/inicio.js": "/js/resource/js/components/livros/inicio.js",
+    "/js/resource/js/components/livros/meuslivros.js": "/js/resource/js/components/livros/meuslivros.js",
+    "/js/resource/js/components/livros/criar.js": "/js/resource/js/components/livros/criar.js",
+    "/js/resource/js/components/livros/editar.js": "/js/resource/js/components/livros/editar.js",
     "/css/app.css": "/css/app.css"
 }
