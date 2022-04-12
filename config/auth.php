@@ -31,11 +31,7 @@ return [
     | users are actually retrieved out of your database or other storage
     | mechanisms used by this application to persist your user's data.
     |
-<<<<<<< HEAD
     | Supported: "session"
-=======
-    | Supported: "session", "token"
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
     |
     */
 
@@ -44,15 +40,6 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-<<<<<<< HEAD
-=======
-
-        'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
-            'hash' => false,
-        ],
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
     ],
 
     /*
@@ -75,11 +62,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-<<<<<<< HEAD
             'model' => App\Models\User::class,
-=======
-            'model' => App\User::class,
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
         ],
 
         // 'users' => [
@@ -97,11 +80,7 @@ return [
     | than one user table or model in the application and you want to have
     | separate password reset settings based on the specific user types.
     |
-<<<<<<< HEAD
     | The expire time is the number of minutes that each reset token will be
-=======
-    | The expire time is the number of minutes that the reset token should be
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
     | considered valid. This security feature keeps tokens short-lived so
     | they have less time to be guessed. You may change this as needed.
     |
@@ -112,7 +91,6 @@ return [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,
-<<<<<<< HEAD
             'throttle' => 60,
         ],
     ],
@@ -130,9 +108,4 @@ return [
 
     'password_timeout' => 10800,
 
-=======
-        ],
-    ],
-
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 ];

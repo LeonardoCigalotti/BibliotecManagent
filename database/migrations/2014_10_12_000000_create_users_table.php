@@ -1,14 +1,8 @@
 <?php
 
-<<<<<<< HEAD
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-=======
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 
 class CreateUsersTable extends Migration
 {
@@ -20,11 +14,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-<<<<<<< HEAD
             $table->id();
-=======
-            $table->bigIncrements('id');
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

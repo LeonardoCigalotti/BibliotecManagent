@@ -11,11 +11,7 @@ return [
     | framework when an event needs to be broadcast. You may set this to
     | any of the connections defined in the "connections" array below.
     |
-<<<<<<< HEAD
     | Supported: "pusher", "ably", "redis", "log", "null"
-=======
-    | Supported: "pusher", "redis", "log", "null"
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
     |
     */
 
@@ -45,14 +41,11 @@ return [
             ],
         ],
 
-<<<<<<< HEAD
         'ably' => [
             'driver' => 'ably',
             'key' => env('ABLY_KEY'),
         ],
 
-=======
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
         'redis' => [
             'driver' => 'redis',
             'connection' => 'default',

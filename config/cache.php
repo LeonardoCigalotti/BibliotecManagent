@@ -13,12 +13,6 @@ return [
     | using this caching library. This connection is used when another is
     | not explicitly specified when executing a given caching function.
     |
-<<<<<<< HEAD
-=======
-    | Supported: "apc", "array", "database", "file",
-    |            "memcached", "redis", "dynamodb"
-    |
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
     */
 
     'default' => env('CACHE_DRIVER', 'file'),
@@ -32,12 +26,9 @@ return [
     | well as their drivers. You may even define multiple stores for the
     | same cache driver to group types of items stored in your caches.
     |
-<<<<<<< HEAD
     | Supported drivers: "apc", "array", "database", "file",
     |         "memcached", "redis", "dynamodb", "octane", "null"
     |
-=======
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
     */
 
     'stores' => [
@@ -48,20 +39,14 @@ return [
 
         'array' => [
             'driver' => 'array',
-<<<<<<< HEAD
             'serialize' => false,
-=======
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
         ],
 
         'database' => [
             'driver' => 'database',
             'table' => 'cache',
             'connection' => null,
-<<<<<<< HEAD
             'lock_connection' => null,
-=======
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
         ],
 
         'file' => [
@@ -91,10 +76,7 @@ return [
         'redis' => [
             'driver' => 'redis',
             'connection' => 'cache',
-<<<<<<< HEAD
             'lock_connection' => 'default',
-=======
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
         ],
 
         'dynamodb' => [
@@ -106,13 +88,10 @@ return [
             'endpoint' => env('DYNAMODB_ENDPOINT'),
         ],
 
-<<<<<<< HEAD
         'octane' => [
             'driver' => 'octane',
         ],
 
-=======
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
     ],
 
     /*

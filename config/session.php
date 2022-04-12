@@ -92,19 +92,12 @@ return [
     | Session Cache Store
     |--------------------------------------------------------------------------
     |
-<<<<<<< HEAD
     | While using one of the framework's cache driven session backends you may
     | list a cache store that should be used for these sessions. This value
     | must match with one of the application's configured cache "stores".
     |
     | Affects: "apc", "dynamodb", "memcached", "redis"
     |
-=======
-    | When using the "apc", "memcached", or "dynamodb" session drivers you may
-    | list a cache store that should be used for these sessions. This value
-    | must match with one of the application's configured cache "stores".
-    |
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
     */
 
     'store' => env('SESSION_STORE', null),
@@ -171,19 +164,11 @@ return [
     |
     | By setting this option to true, session cookies will only be sent back
     | to the server if the browser has a HTTPS connection. This will keep
-<<<<<<< HEAD
     | the cookie from being sent to you when it can't be done securely.
     |
     */
 
     'secure' => env('SESSION_SECURE_COOKIE'),
-=======
-    | the cookie from being sent to you if it can not be done securely.
-    |
-    */
-
-    'secure' => env('SESSION_SECURE_COOKIE', false),
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 
     /*
     |--------------------------------------------------------------------------
@@ -205,7 +190,6 @@ return [
     |
     | This option determines how your cookies behave when cross-site requests
     | take place, and can be used to mitigate CSRF attacks. By default, we
-<<<<<<< HEAD
     | will set this value to "lax" since this is a secure default value.
     |
     | Supported: "lax", "strict", "none", null
@@ -213,14 +197,5 @@ return [
     */
 
     'same_site' => 'lax',
-=======
-    | do not enable this as other CSRF protection services are in place.
-    |
-    | Supported: "lax", "strict"
-    |
-    */
-
-    'same_site' => null,
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 
 ];

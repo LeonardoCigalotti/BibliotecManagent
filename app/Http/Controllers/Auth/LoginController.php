@@ -3,10 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-<<<<<<< HEAD
 use App\Providers\RouteServiceProvider;
-=======
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -29,11 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-<<<<<<< HEAD
     protected $redirectTo = RouteServiceProvider::HOME;
-=======
-    protected $redirectTo = '/home';
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 
     /**
      * Create a new controller instance.
