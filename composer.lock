@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "cf14086919a839fe740e00554e4baff6",
+=======
+    "content-hash": "26baf304cc557436ec583b1aaef46d63",
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -494,6 +498,67 @@
             "time": "2020-12-29T14:50:06+00:00"
         },
         {
+<<<<<<< HEAD
+=======
+            "name": "fideloper/proxy",
+            "version": "4.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fideloper/TrustedProxy.git",
+                "reference": "c073b2bd04d1c90e04dc1b787662b558dd65ade0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fideloper/TrustedProxy/zipball/c073b2bd04d1c90e04dc1b787662b558dd65ade0",
+                "reference": "c073b2bd04d1c90e04dc1b787662b558dd65ade0",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.0|^6.0|^7.0|^8.0|^9.0",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "illuminate/http": "^5.0|^6.0|^7.0|^8.0|^9.0",
+                "mockery/mockery": "^1.0",
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Fideloper\\Proxy\\TrustedProxyServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fideloper\\Proxy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Fidao",
+                    "email": "fideloper@gmail.com"
+                }
+            ],
+            "description": "Set trusted proxies for Laravel",
+            "keywords": [
+                "load balancing",
+                "proxy",
+                "trusted proxy"
+            ],
+            "support": {
+                "issues": "https://github.com/fideloper/TrustedProxy/issues",
+                "source": "https://github.com/fideloper/TrustedProxy/tree/4.4.1"
+            },
+            "time": "2020-10-22T13:48:01+00:00"
+        },
+        {
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
             "name": "fruitcake/laravel-cors",
             "version": "v2.2.0",
             "source": {
@@ -959,6 +1024,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v8.83.8",
             "source": {
                 "type": "git",
@@ -969,6 +1035,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/cf430301ad17656b3d918995bcdd0454c3c119b9",
                 "reference": "cf430301ad17656b3d918995bcdd0454c3c119b9",
+=======
+            "version": "v8.83.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "0706abf5c99d3b14149fcf79c95074dadd40b203"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/0706abf5c99d3b14149fcf79c95074dadd40b203",
+                "reference": "0706abf5c99d3b14149fcf79c95074dadd40b203",
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
                 "shasum": ""
             },
             "require": {
@@ -1128,6 +1206,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2022-04-12T13:49:56+00:00"
         },
         {
@@ -1142,6 +1221,22 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/sanctum/zipball/31fbe6f85aee080c4dc2f9b03dc6dd5d0ee72473",
                 "reference": "31fbe6f85aee080c4dc2f9b03dc6dd5d0ee72473",
+=======
+            "time": "2022-04-05T15:08:10+00:00"
+        },
+        {
+            "name": "laravel/sanctum",
+            "version": "v2.15.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/sanctum.git",
+                "reference": "5be160413b6f37dcf8758663edeab12d0e806f56"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/5be160413b6f37dcf8758663edeab12d0e806f56",
+                "reference": "5be160413b6f37dcf8758663edeab12d0e806f56",
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
                 "shasum": ""
             },
             "require": {
@@ -1193,7 +1288,11 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
+<<<<<<< HEAD
             "time": "2022-04-08T13:39:49+00:00"
+=======
+            "time": "2022-03-28T13:53:05+00:00"
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
         },
         {
             "name": "laravel/serializable-closure",
@@ -1323,6 +1422,7 @@
             "time": "2022-03-23T12:38:24+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "laravel/ui",
             "version": "v3.4.5",
             "source": {
@@ -1384,6 +1484,8 @@
             "time": "2022-02-21T14:59:16+00:00"
         },
         {
+=======
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
             "name": "league/commonmark",
             "version": "2.3.0",
             "source": {

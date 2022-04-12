@@ -1,0 +1,18 @@
+t:qq
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch main
+# Changes to be committed:
+#	modified:   resources/views/livros/meuslivros.blade.php
+#
+# Changes not staged for commit:
+#	modified:   resources/views/Livros/indexAdmin.blade.php
+#	modified:   resources/views/Reservas/reservar.blade.php
+#	modified:   resources/views/Usuarios/inicio.blade.php
+#	modified:   resources/views/layoutInicioAdmin.blade.php
+#
+# Untracked files:
+#	resources/views/Reservas/minhasReservas.blade.php
+#	resources/views/Usuarios/perfil.blade.php
+#

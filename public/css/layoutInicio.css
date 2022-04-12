@@ -1,0 +1,83 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+div.tabela {
+    display: grid;
+    grid-template-columns: 0fr 7fr 0px;
+    grid-template-rows: 0px 9fr 0fr;
+    grid-template-areas:
+       'top top top'
+       'menu conteudo lateral-direita'
+       'rodape rodape rodape';
+    font-family: 'Open Sans', sans-serif;
+    height: 700px;
+}
+aside.menu {
+    background-color: grey;
+    grid-area: menu;
+    font-size: 18px;
+}
+aside.menu ul {
+    padding-inline-start: 5px;
+    margin-top: 80px;
+    list-style: none;
+    width: 120px;
+    height: 50px;
+    padding: 10px;
+}
+aside.menu li{
+    position: relative;
+    margin-top: 40px;
+    list-style: none;
+    width: 120px;
+    height: 30px;
+    text-align: center;
+    padding: 10px 0px 0px;
+    border-radius: 25px;
+}
+aside.menu a{
+    padding: 0px 0px 0px 0px;
+    margin-top: 60px;
+    color: blue;
+}
+aside.menu li#reservas:hover{
+    padding: 0px 0px 15px;
+    color: blue;
+    background-color: #404b69;
+    border-radius: 25px;
+    border: 1px solid black;
+}
+aside.menu a:hover{
+    padding: 10px;
+    color: blue;
+    background-color: #404b69;
+    border-radius: 25px;
+    border: 1px solid black;
+
+}
+aside.menu a#none:hover{
+    padding: 0;
+    color:blue;
+    background-color: #404b69;
+    border: none;
+    border-radius: 0px;
+}
+aside.menu footer{
+    margin-top: 515px;
+    color: black;
+    font-size: 10px;
+    text-align: center;
+    position: relative;
+}
+main.conteudo{
+    background-color: ghostwhite;
+    grid-area: conteudo;
+}
+main header{
+    display: block;
+    background-color: darkgray;
+    padding: 3%;
+    text-align: center;
+    font-size: 25px;
+}

@@ -2,8 +2,16 @@
 
 namespace App\Models;
 
+<<<<<<< HEAD
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+=======
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 
 class User extends Authenticatable
 {
@@ -46,3 +54,7 @@ class User extends Authenticatable
         return $this->hasMany(Reserva::class);
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33

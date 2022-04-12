@@ -2,7 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
 
+=======
+use App\Http\Controllers\Usuario\UsuarioController;
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,9 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< HEAD
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+=======
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 Route::get('/newuser', 'Usuario\UsuarioController@novoRegistro');
 Route::get('/entrar', 'Usuario\UsuarioController@entrar');

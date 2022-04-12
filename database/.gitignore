@@ -1,1 +1,10 @@
+<<<<<<< HEAD
 *.sqlite*
+=======
+<<<<<<< HEAD
+*.sqlite*
+=======
+*.sqlite
+*.sqlite-journal
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33

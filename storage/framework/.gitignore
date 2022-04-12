@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 compiled.php
 config.php
 down
@@ -7,3 +11,16 @@ routes.php
 routes.scanned.php
 schedule-*
 services.json
+<<<<<<< HEAD
+=======
+=======
+config.php
+routes.php
+schedule-*
+compiled.php
+services.json
+events.scanned.php
+routes.scanned.php
+down
+>>>>>>> 90e6203f02f4568467df115cb79298baa6769451
+>>>>>>> b9465da18a749f9912d6769c811145f40955fb33
