@@ -2,11 +2,6 @@ const Index = () => import('./components/inicio/Index.vue' /* webpackChunkName: 
 const Registrar = () => import('./components/inicio/Registrar.vue' /* webpackChunkName: "resource/js/components/inicio/registrar" */);
 const Login = () => import('./components/inicio/Login.vue' /* webpackChunkName: "resource/js/components/inicio/login" */);
 
-<<<<<<< HEAD
-=======
-const Perfil = () =>import('./components/usuario/Perfil.vue' /* webpackChunkName: "resource/js/components/usuario/perfil" */)
-
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 const IndexAdmin = () => import('./components/livros/Inicio.vue' /* webpackChunkName: "resource/js/components/livros/inicio" */);
 const MeusLivros = () => import('./components/livros/MeusLivros.vue' /* webpackChunkName: "resource/js/components/livros/meuslivros" */);
 const AdicionarLivro = () => import('./components/livros/Criar.vue' /* webpackChunkName: "resource/js/components/livros/criar" */);
@@ -32,16 +27,6 @@ export const routes = [
 
 
     {
-<<<<<<< HEAD
-=======
-        name: 'perfil',
-        path: '/admin/perfil',
-        component: Perfil
-    },
-
-
-    {
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
         name: 'indexAdmin',
         path: '/admin/index',
         component: IndexAdmin

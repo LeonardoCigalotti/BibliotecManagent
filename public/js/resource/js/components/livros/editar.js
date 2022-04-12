@@ -150,11 +150,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Editar_vue_vue_type_template_id_6be44a5c_scoped_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Editar.vue?vue&type=template&id=6be44a5c&scoped=true */ "./resources/js/components/livros/Editar.vue?vue&type=template&id=6be44a5c&scoped=true");
 /* harmony import */ var _Editar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Editar.vue?vue&type=script&lang=js */ "./resources/js/components/livros/Editar.vue?vue&type=script&lang=js");
 /* harmony import */ var _Editar_vue_vue_type_style_index_0_id_6be44a5c_scoped_true_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Editar.vue?vue&type=style&index=0&id=6be44a5c&scoped=true&lang=css */ "./resources/js/components/livros/Editar.vue?vue&type=style&index=0&id=6be44a5c&scoped=true&lang=css");
-<<<<<<< HEAD
 /* harmony import */ var _Users_tmax_Downloads_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
-=======
-/* harmony import */ var _Users_tmax_Downloads_BibliotecManagent_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 
 
 
@@ -162,11 +158,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-<<<<<<< HEAD
 const __exports__ = /*#__PURE__*/(0,_Users_tmax_Downloads_laravel_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Editar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Editar_vue_vue_type_template_id_6be44a5c_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-6be44a5c"],['__file',"resources/js/components/livros/Editar.vue"]])
-=======
-const __exports__ = /*#__PURE__*/(0,_Users_tmax_Downloads_BibliotecManagent_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Editar_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Editar_vue_vue_type_template_id_6be44a5c_scoped_true__WEBPACK_IMPORTED_MODULE_0__.render],['__scopeId',"data-v-6be44a5c"],['__file',"resources/js/components/livros/Editar.vue"]])
->>>>>>> b9465da18a749f9912d6769c811145f40955fb33
 /* hot reload */
 if (false) {}
 
